@@ -1,0 +1,15 @@
+
+
+{% if email_account %}
+	your email address --> {{ email_account.inbox_name }}@{{ domain }}
+	<hr>
+	<hr>
+	<br>
+	<br>
+	<br>
+	{% for email in emails %}
+	 	<a href="/{{ email_account.access_key}}/{{email.id}}">from --> {{ email.email_from }} <br> {{ email.email_title }}</a> <hr>
+	{% endfor %}
+{% else %}
+	{{ error }}
+{% endif %}
